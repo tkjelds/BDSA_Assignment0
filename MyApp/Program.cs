@@ -5,9 +5,13 @@ namespace MyApp{
         static void Main(string[] args){
             var LeapYearFunc = new LeapYear();
             var StringConverter = new StringToIntConverter();
+
             var LeapYearString = Console.ReadLine();
+
             int LeapYear = StringConverter.Convert(LeapYearString);
+
             if(LeapYear == -1) {Console.WriteLine("Cannot parse input"); return;}
+
             if(LeapYearFunc.IsLeapYear(LeapYear)){
                 Console.WriteLine("yay");
             } else
@@ -17,7 +21,7 @@ namespace MyApp{
         }
     }
     public class StringToIntConverter{
-        public int Convert(string intString){
+        public int Convert(string? intString){
             int result;
             bool isConverted = Int32.TryParse(intString,out result);
             if(!isConverted) return -1;
