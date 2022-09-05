@@ -11,7 +11,7 @@ namespace MyApp{
             int LeapYear = StringConverter.Convert(LeapYearString);
 
             if(LeapYear == -1) {Console.WriteLine("Cannot parse input"); return;}
-
+            if(LeapYear == -2) {Console.WriteLine("Input smaller than 1582"); return;}
             if(LeapYearFunc.IsLeapYear(LeapYear)){
                 Console.WriteLine("yay");
             } else
@@ -25,6 +25,7 @@ namespace MyApp{
             int result;
             bool isConverted = Int32.TryParse(intString,out result);
             if(!isConverted) return -1;
+            if(result < 1582) return -2;
             return result;
         }
     }
