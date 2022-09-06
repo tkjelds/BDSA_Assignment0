@@ -46,7 +46,7 @@ public class UnitTest1
 
     }
     [Fact]
-    public void testStringToIntConverter_Fail(){
+    public void TestStringToIntConverter_Fail(){
         var STICon = new StringToIntConverter();
 
         var result = STICon.Convert("test");
@@ -54,7 +54,7 @@ public class UnitTest1
         result.Should().Be(-1);
     }
     [Fact]
-    public void testStringToIntConverter_Succees(){
+    public void TestStringToIntConverter_Succees(){
         var STICon = new StringToIntConverter();
 
         var result = STICon.Convert("2000");
