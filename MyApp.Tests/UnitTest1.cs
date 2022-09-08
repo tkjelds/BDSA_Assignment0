@@ -45,5 +45,30 @@ public class UnitTest1
         result.Should().Be(true);
 
     }
+    [Fact]
+    public void TestStringToIntConverter_Fail(){
+        var STICon = new StringToIntConverter();
+
+        var result = STICon.Convert("test");
+
+        result.Should().Be(-1);
+    }
+    [Fact]
+    public void TestStringToIntConverter_Succees(){
+        var STICon = new StringToIntConverter();
+
+        var result = STICon.Convert("2000");
+
+        result.Should().Be(2000);
+    }
+
+    [Fact]
+    public void testStringToIntConverter_fail_with_number_smaller_than_1582(){
+        var STICon = new StringToIntConverter();
+
+        var result = STICon.Convert("100");
+
+        result.Should().Be(-2);
+    }
 
 }
