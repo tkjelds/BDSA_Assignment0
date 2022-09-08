@@ -1,2 +1,2 @@
 # BDSA_Assignment0
-Assignment 0
+The pdf is in the documentation folder.
